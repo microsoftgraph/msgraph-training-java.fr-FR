@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3eec5a727d21e481525e2a2892e33a0a30a9bb25
-ms.sourcegitcommit: 2af94da662c454e765b32edeb9406812e3732406
+ms.openlocfilehash: f77f0518aa22d015cf5e915886f8f24a487e7bab
+ms.sourcegitcommit: 189f87d879c57b11992e7bc75580b4c69e014122
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/13/2019
-ms.locfileid: "40018805"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43612074"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
@@ -15,10 +15,15 @@ Ce didacticiel vous apprend à créer une application de console Java qui utilis
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Avant de commencer ce didacticiel, le [Kit de développement Java (JDK)](https://java.com/en/download/faq/develop.xml) et [Maven](https://maven.apache.org/) doit être installé sur votre ordinateur de développement. Si vous n’avez pas le JDK ou Maven, reportez-vous aux liens précédents sur les options de téléchargement.
+Avant de commencer ce didacticiel, le [Kit de développement Java (JDK)](https://java.com/en/download/faq/develop.xml) et [Gradle](https://gradle.org/) doit être installé sur votre ordinateur de développement. Si vous n’avez pas le JDK ou Maven, reportez-vous aux liens précédents sur les options de téléchargement.
+
+Vous devez également disposer d’un compte Microsoft personnel disposant d’une boîte aux lettres sur Outlook.com ou d’un compte professionnel ou scolaire Microsoft. Si vous n’avez pas de compte Microsoft, vous disposez de deux options pour obtenir un compte gratuit :
+
+- Vous pouvez vous [inscrire pour obtenir un nouveau compte Microsoft personnel](https://signup.live.com/signup?wa=wsignin1.0&rpsnv=12&ct=1454618383&rver=6.4.6456.0&wp=MBI_SSL_SHARED&wreply=https://mail.live.com/default.aspx&id=64855&cbcxt=mai&bk=1454618383&uiflavor=web&uaid=b213a65b4fdc484382b6622b3ecaa547&mkt=E-US&lc=1033&lic=1).
+- Vous pouvez vous [inscrire au programme pour les développeurs office 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement gratuit à Office 365.
 
 > [!NOTE]
-> Ce didacticiel a été écrit avec OpenJDK version 12.0.1 et Maven 3.6.1. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.
+> Ce didacticiel a été écrit avec OpenJDK version 14.0.0.36 et Gradle 6,3. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.
 
 ## <a name="feedback"></a>Commentaires
 
