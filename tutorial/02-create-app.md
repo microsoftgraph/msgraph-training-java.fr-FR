@@ -1,115 +1,103 @@
 ---
-ms.openlocfilehash: 298c78d0626e16899de402b3e9b537c8b8386886
-ms.sourcegitcommit: 2af94da662c454e765b32edeb9406812e3732406
+ms.openlocfilehash: 381e4166f07e1dbc51c072645f17002e43f6cc16
+ms.sourcegitcommit: 189f87d879c57b11992e7bc75580b4c69e014122
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/13/2019
-ms.locfileid: "40018804"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43612018"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
-<span data-ttu-id="13356-101">Ouvrez votre interface de ligne de commande (CLI) dans un répertoire où vous souhaitez créer le projet.</span><span class="sxs-lookup"><span data-stu-id="13356-101">Open your command-line interface (CLI) in a directory where you want to create the project.</span></span> <span data-ttu-id="13356-102">Exécutez la commande suivante pour créer un projet Maven.</span><span class="sxs-lookup"><span data-stu-id="13356-102">Run the following command to create a new Maven project.</span></span>
+<span data-ttu-id="4a3ca-101">Dans cette section, vous allez créer une application Java de base.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-101">In this section you'll create a basic Java console app.</span></span>
 
-```Shell
-mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=com.contoso -DartifactId=graphtutorial -Dversion=1.0-SNAPSHOT
-```
+1. <span data-ttu-id="4a3ca-102">Ouvrez votre interface de ligne de commande (CLI) dans un répertoire où vous souhaitez créer le projet.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-102">Open your command-line interface (CLI) in a directory where you want to create the project.</span></span> <span data-ttu-id="4a3ca-103">Exécutez la commande suivante pour créer un projet Gradle.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-103">Run the following command to create a new Gradle project.</span></span>
 
-> [!IMPORTANT]
-> <span data-ttu-id="13356-103">Vous pouvez entrer des valeurs différentes pour l’ID de`DgroupId` groupe (paramètre) et l'`DartifactId` ID d’artefact (paramètre) que les valeurs spécifiées ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="13356-103">You can enter different values for the group ID (`DgroupId` parameter) and artifact ID (`DartifactId` parameter) than the values specified above.</span></span> <span data-ttu-id="13356-104">L’exemple de code de ce didacticiel suppose que l’ID `com.contoso` de groupe a été utilisé.</span><span class="sxs-lookup"><span data-stu-id="13356-104">The sample code in this tutorial assumes that the group ID `com.contoso` was used.</span></span> <span data-ttu-id="13356-105">Si vous utilisez une autre valeur, veillez à remplacer `com.contoso` dans n’importe quel exemple de code avec votre ID de groupe.</span><span class="sxs-lookup"><span data-stu-id="13356-105">If you use a different value, be sure to replace `com.contoso` in any sample code with your group ID.</span></span>
+    ```Shell
+    gradle init --dsl groovy --test-framework junit --type java-application --project-name graphtutorial --package graphtutorial
+    ```
 
-<span data-ttu-id="13356-106">Lorsque vous y êtes invité, confirmez la configuration, puis attendez que le projet soit créé.</span><span class="sxs-lookup"><span data-stu-id="13356-106">When prompted, confirm the configuration, then wait for the project to be created.</span></span> <span data-ttu-id="13356-107">Une fois le projet créé, vérifiez qu’il fonctionne en exécutant les commandes suivantes pour empaqueter et exécuter l’application dans votre interface CLI.</span><span class="sxs-lookup"><span data-stu-id="13356-107">Once the project is created, verify that it works by running the following commands to package and run the app in your CLI.</span></span>
+1. <span data-ttu-id="4a3ca-104">Une fois le projet créé, vérifiez qu’il fonctionne en exécutant la commande suivante pour exécuter l’application dans votre interface CLI.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-104">Once the project is created, verify that it works by running the following command to run the app in your CLI.</span></span>
 
-```Shell
-mvn package
-java -cp target/graphtutorial-1.0-SNAPSHOT.jar com.contoso.App
-```
+    ```Shell
+    ./gradlew --console plain run
+    ```
 
-<span data-ttu-id="13356-108">Si elle fonctionne, l’application doit produire `Hello World!`une sortie.</span><span class="sxs-lookup"><span data-stu-id="13356-108">If it works, the app should output `Hello World!`.</span></span> <span data-ttu-id="13356-109">Avant de poursuivre, ajoutez des dépendances supplémentaires que vous utiliserez plus tard.</span><span class="sxs-lookup"><span data-stu-id="13356-109">Before moving on, add some additional dependencies that you will use later.</span></span>
+    <span data-ttu-id="4a3ca-105">Si elle fonctionne, l’application doit produire `Hello World.`une sortie.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-105">If it works, the app should output `Hello World.`.</span></span>
 
-- <span data-ttu-id="13356-110">[Bibliothèque d’authentification Microsoft (MSAL) pour Java](https://github.com/AzureAD/microsoft-authentication-library-for-java) pour authentifier l’utilisateur et acquérir des jetons d’accès.</span><span class="sxs-lookup"><span data-stu-id="13356-110">[Microsoft Authentication Library (MSAL) for Java](https://github.com/AzureAD/microsoft-authentication-library-for-java) to authenticate the user and acquire access tokens.</span></span>
-- <span data-ttu-id="13356-111">[Kit de développement logiciel (SDK) Microsoft Graph pour Java](https://github.com/microsoftgraph/msgraph-sdk-java) pour effectuer des appels à Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="13356-111">[Microsoft Graph SDK for Java](https://github.com/microsoftgraph/msgraph-sdk-java) to make calls to the Microsoft Graph.</span></span>
-- <span data-ttu-id="13356-112">[Liaison NOP SLF4J](https://mvnrepository.com/artifact/org.slf4j/slf4j-nop) pour supprimer la journalisation à partir de MSAL.</span><span class="sxs-lookup"><span data-stu-id="13356-112">[SLF4J NOP Binding](https://mvnrepository.com/artifact/org.slf4j/slf4j-nop) to suppress logging from MSAL.</span></span>
+## <a name="install-dependencies"></a><span data-ttu-id="4a3ca-106">Installer les dépendances</span><span class="sxs-lookup"><span data-stu-id="4a3ca-106">Install dependencies</span></span>
 
-<span data-ttu-id="13356-113">Ouvrez **./graphtutorial/POM.xml**.</span><span class="sxs-lookup"><span data-stu-id="13356-113">Open **./graphtutorial/pom.xml**.</span></span> <span data-ttu-id="13356-114">Ajoutez les éléments suivants à `<dependencies>` l’intérieur de l’élément.</span><span class="sxs-lookup"><span data-stu-id="13356-114">Add the following inside the `<dependencies>` element.</span></span>
+<span data-ttu-id="4a3ca-107">Avant de poursuivre, ajoutez des dépendances supplémentaires que vous utiliserez plus tard.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-107">Before moving on, add some additional dependencies that you will use later.</span></span>
 
-```xml
-<dependency>
-  <groupId>org.slf4j</groupId>
-  <artifactId>slf4j-nop</artifactId>
-  <version>1.8.0-beta4</version>
-</dependency>
+- <span data-ttu-id="4a3ca-108">[Bibliothèque d’authentification Microsoft (MSAL) pour Java](https://github.com/AzureAD/microsoft-authentication-library-for-java) pour authentifier l’utilisateur et acquérir des jetons d’accès.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-108">[Microsoft Authentication Library (MSAL) for Java](https://github.com/AzureAD/microsoft-authentication-library-for-java) to authenticate the user and acquire access tokens.</span></span>
+- <span data-ttu-id="4a3ca-109">[Kit de développement logiciel (SDK) Microsoft Graph pour Java](https://github.com/microsoftgraph/msgraph-sdk-java) pour effectuer des appels à Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-109">[Microsoft Graph SDK for Java](https://github.com/microsoftgraph/msgraph-sdk-java) to make calls to the Microsoft Graph.</span></span>
+- <span data-ttu-id="4a3ca-110">[Liaison NOP SLF4J](https://mvnrepository.com/artifact/org.slf4j/slf4j-nop) pour supprimer la journalisation à partir de MSAL.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-110">[SLF4J NOP Binding](https://mvnrepository.com/artifact/org.slf4j/slf4j-nop) to suppress logging from MSAL.</span></span>
 
-<dependency>
-  <groupId>com.microsoft.graph</groupId>
-  <artifactId>microsoft-graph</artifactId>
-  <version>1.6.0</version>
-</dependency>
+1. <span data-ttu-id="4a3ca-111">Ouvrez **./Build.gradle**.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-111">Open **./build.gradle**.</span></span> <span data-ttu-id="4a3ca-112">Mettez à `dependencies` jour la section pour ajouter ces dépendances.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-112">Update the `dependencies` section to add those dependencies.</span></span>
 
-<dependency>
-  <groupId>com.microsoft.azure</groupId>
-  <artifactId>msal4j</artifactId>
-  <version>1.1.0</version>
-</dependency>
-```
+    :::code language="gradle" source="../demo/graphtutorial/build.gradle" id="DependenciesSnippet" highlight="7-9":::
 
-<span data-ttu-id="13356-115">Lors de la prochaine génération du projet, Maven télécharge ces dépendances.</span><span class="sxs-lookup"><span data-stu-id="13356-115">The next time you build the project, Maven will download those dependencies.</span></span>
+1. <span data-ttu-id="4a3ca-113">Ajoutez les éléments suivants à la fin de **./Build.gradle**.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-113">Add the following to the end of **./build.gradle**.</span></span>
 
-## <a name="design-the-app"></a><span data-ttu-id="13356-116">Concevoir l’application</span><span class="sxs-lookup"><span data-stu-id="13356-116">Design the app</span></span>
+    :::code language="gradle" source="../demo/graphtutorial/build.gradle" id="StandardInputSnippet":::
 
-<span data-ttu-id="13356-117">Ouvrez le fichier **./graphtutorial/src/main/Java/com/contoso/App.Java** et remplacez son contenu par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="13356-117">Open the **./graphtutorial/src/main/java/com/contoso/App.java** file and replace its contents with the following.</span></span>
+<span data-ttu-id="4a3ca-114">Lors de la prochaine génération du projet, Gradle télécharge ces dépendances.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-114">The next time you build the project, Gradle will download those dependencies.</span></span>
 
-```java
-package com.contoso;
+## <a name="design-the-app"></a><span data-ttu-id="4a3ca-115">Concevoir l’application</span><span class="sxs-lookup"><span data-stu-id="4a3ca-115">Design the app</span></span>
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+1. <span data-ttu-id="4a3ca-116">Ouvrez le fichier **./src/main/Java/graphtutorial/App.Java** et remplacez son contenu par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-116">Open the **./src/main/java/graphtutorial/App.java** file and replace its contents with the following.</span></span>
 
-/**
- * Graph Tutorial
- *
- */
-public class App {
-    public static void main(String[] args) {
-        System.out.println("Java Graph Tutorial");
-        System.out.println();
+    ```java
+    package graphtutorial;
 
-        Scanner input = new Scanner(System.in);
+    import java.util.InputMismatchException;
+    import java.util.Scanner;
 
-        int choice = -1;
+    /**
+     * Graph Tutorial
+     *
+     */
+    public class App {
+        public static void main(String[] args) {
+            System.out.println("Java Graph Tutorial");
+            System.out.println();
 
-        while (choice != 0) {
-            System.out.println("Please choose one of the following options:");
-            System.out.println("0. Exit");
-            System.out.println("1. Display access token");
-            System.out.println("2. List calendar events");
+            Scanner input = new Scanner(System.in);
 
-            try {
-                choice = input.nextInt();
-            } catch (InputMismatchException ex) {
-                // Skip over non-integer input
-                input.nextLine();
+            int choice = -1;
+
+            while (choice != 0) {
+                System.out.println("Please choose one of the following options:");
+                System.out.println("0. Exit");
+                System.out.println("1. Display access token");
+                System.out.println("2. List calendar events");
+
+                try {
+                    choice = input.nextInt();
+                } catch (InputMismatchException ex) {
+                    // Skip over non-integer input
+                    input.nextLine();
+                }
+
+                // Process user choice
+                switch(choice) {
+                    case 0:
+                        // Exit the program
+                        System.out.println("Goodbye...");
+                        break;
+                    case 1:
+                        // Display access token
+                        break;
+                    case 2:
+                        // List the calendar
+                        break;
+                    default:
+                        System.out.println("Invalid choice");
+                }
             }
 
-            // Process user choice
-            switch(choice) {
-                case 0:
-                    // Exit the program
-                    System.out.println("Goodbye...");
-                    break;
-                case 1:
-                    // Display access token
-                    break;
-                case 2:
-                    // List the calendar
-                    break;
-                default:
-                    System.out.println("Invalid choice");
-            }
+            input.close();
         }
-
-        input.close();
     }
-}
-```
+    ```
 
-<span data-ttu-id="13356-118">Cela implémente un menu de base et lit le choix de l’utilisateur à partir de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="13356-118">This implements a basic menu and reads the user's choice from the command line.</span></span>
+    <span data-ttu-id="4a3ca-117">Cela implémente un menu de base et lit le choix de l’utilisateur à partir de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="4a3ca-117">This implements a basic menu and reads the user's choice from the command line.</span></span>
