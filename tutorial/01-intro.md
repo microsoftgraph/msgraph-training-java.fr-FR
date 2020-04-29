@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f77f0518aa22d015cf5e915886f8f24a487e7bab
-ms.sourcegitcommit: 189f87d879c57b11992e7bc75580b4c69e014122
+ms.openlocfilehash: f13ee9baa26bb487d5b50bd966e40cee9ba64378
+ms.sourcegitcommit: 22ec2c0e4803b82c9d360f3609f8b15ba5d017ca
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43612074"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "43940475"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
@@ -15,7 +15,7 @@ Ce didacticiel vous apprend à créer une application de console Java qui utilis
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Avant de commencer ce didacticiel, le [Kit de développement Java (JDK)](https://java.com/en/download/faq/develop.xml) et [Gradle](https://gradle.org/) doit être installé sur votre ordinateur de développement. Si vous n’avez pas le JDK ou Maven, reportez-vous aux liens précédents sur les options de téléchargement.
+Avant de commencer ce didacticiel, le [Kit de développement Java (JDK)](https://java.com/en/download/faq/develop.xml) et [Gradle](https://gradle.org/) doit être installé sur votre ordinateur de développement. Si vous n’avez pas le JDK ou Gradle, reportez-vous aux liens précédents sur les options de téléchargement.
 
 Vous devez également disposer d’un compte Microsoft personnel disposant d’une boîte aux lettres sur Outlook.com ou d’un compte professionnel ou scolaire Microsoft. Si vous n’avez pas de compte Microsoft, vous disposez de deux options pour obtenir un compte gratuit :
 
