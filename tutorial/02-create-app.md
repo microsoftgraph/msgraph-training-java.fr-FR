@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 381e4166f07e1dbc51c072645f17002e43f6cc16
-ms.sourcegitcommit: 189f87d879c57b11992e7bc75580b4c69e014122
+ms.openlocfilehash: 72936993d940cdfb86c864a6ffc543ed466127d1
+ms.sourcegitcommit: eb935a250f8531b04a42710356072b80d46ee3a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43612018"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "49661080"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
@@ -22,7 +22,7 @@ Dans cette section, vous allez créer une application Java de base.
     ./gradlew --console plain run
     ```
 
-    Si elle fonctionne, l’application doit produire `Hello World.`une sortie.
+    Si elle fonctionne, l’application doit produire une sortie `Hello World.` .
 
 ## <a name="install-dependencies"></a>Installer les dépendances
 
@@ -32,7 +32,7 @@ Avant de poursuivre, ajoutez des dépendances supplémentaires que vous utiliser
 - [Kit de développement logiciel (SDK) Microsoft Graph pour Java](https://github.com/microsoftgraph/msgraph-sdk-java) pour effectuer des appels à Microsoft Graph.
 - [Liaison NOP SLF4J](https://mvnrepository.com/artifact/org.slf4j/slf4j-nop) pour supprimer la journalisation à partir de MSAL.
 
-1. Ouvrez **./Build.gradle**. Mettez à `dependencies` jour la section pour ajouter ces dépendances.
+1. Ouvrez **./Build.gradle**. Mettez à jour la `dependencies` section pour ajouter ces dépendances.
 
     :::code language="gradle" source="../demo/graphtutorial/build.gradle" id="DependenciesSnippet" highlight="7-9":::
 
@@ -69,14 +69,16 @@ Lors de la prochaine génération du projet, Gradle télécharge ces dépendance
                 System.out.println("Please choose one of the following options:");
                 System.out.println("0. Exit");
                 System.out.println("1. Display access token");
-                System.out.println("2. List calendar events");
+                System.out.println("2. View this week's calendar");
+                System.out.println("3. Add an event");
 
                 try {
                     choice = input.nextInt();
                 } catch (InputMismatchException ex) {
                     // Skip over non-integer input
-                    input.nextLine();
                 }
+
+                input.nextLine();
 
                 // Process user choice
                 switch(choice) {
@@ -89,6 +91,9 @@ Lors de la prochaine génération du projet, Gradle télécharge ces dépendance
                         break;
                     case 2:
                         // List the calendar
+                        break;
+                    case 3:
+                        // Create a new event
                         break;
                     default:
                         System.out.println("Invalid choice");

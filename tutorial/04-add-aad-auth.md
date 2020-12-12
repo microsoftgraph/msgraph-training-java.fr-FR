@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3e4d7f11c89947da29873c85ab2808279c94265a
-ms.sourcegitcommit: 189f87d879c57b11992e7bc75580b4c69e014122
+ms.openlocfilehash: 4c04317462240ff0696ac1381fae886481db7847
+ms.sourcegitcommit: eb935a250f8531b04a42710356072b80d46ee3a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43612060"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "49661066"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
@@ -12,16 +12,20 @@ Dans cet exercice, vous allez étendre l’application de l’exercice précéde
 
 1. Créez un nouveau répertoire nommé **graphtutorial** dans le répertoire **./src/main/Resources**
 
-1. Créez un fichier dans le répertoire **./src/main/Resources/graphtutorial** nommé **OAuth. Properties**et ajoutez le texte suivant dans ce fichier.
+1. Créez un fichier dans le répertoire **./src/main/Resources/graphtutorial** nommé **OAuth. Properties** et ajoutez le texte suivant dans ce fichier. Remplacez `YOUR_APP_ID_HERE` par l’ID d’application que vous avez créé dans le portail Azure.
 
     :::code language="ini" source="../demo/graphtutorial/src/main/resources/graphtutorial/oAuth.properties.example":::
 
-    Remplacez `YOUR_APP_ID_HERE` par l’ID d’application que vous avez créé dans le portail Azure.
+    La valeur de `app.scopes` contient les étendues d’autorisation requises par l’application.
+
+    - **User. Read** permet à l’application d’accéder au profil de l’utilisateur.
+    - **MailboxSettings. Read** permet à l’application d’accéder aux paramètres à partir de la boîte aux lettres de l’utilisateur, y compris le fuseau horaire configuré par l’utilisateur.
+    - **Calendars. ReadWrite** permet à l’application de répertorier le calendrier de l’utilisateur et d’ajouter de nouveaux événements dans le calendrier.
 
     > [!IMPORTANT]
     > Si vous utilisez le contrôle de code source tel que git, il est maintenant recommandé d’exclure le fichier **OAuth. Properties** du contrôle de code source afin d’éviter une fuite accidentelle de votre ID d’application.
 
-1. Ouvrez **app. Java** et ajoutez les instructions `import` suivantes.
+1. Ouvrez **app. Java** et ajoutez les `import` instructions suivantes.
 
     ```java
     import java.io.IOException;
@@ -61,3 +65,6 @@ Dans cet exercice, vous allez étendre l’application de l’exercice précéde
     ```
 
 1. Ouvrez un navigateur et accédez à l’URL affichée. Entrez le code fourni et connectez-vous. Une fois terminé, revenez à l’application et choisissez le **1. Afficher** l’option de jeton d’accès pour afficher le jeton d’accès.
+
+> [!TIP]
+> Les jetons d’accès pour les comptes professionnels ou scolaires de Microsoft peuvent être analysés à des fins de dépannage à l’adresse [https://jwt.ms](https://jwt.ms) . Les jetons d’accès pour les comptes Microsoft personnels utilisent un format propriétaire et ne peuvent pas être analysés.

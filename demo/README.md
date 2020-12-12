@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: 725648d1b8518c17938c17c160c5799258dc1d92
-ms.sourcegitcommit: 189f87d879c57b11992e7bc75580b4c69e014122
+ms.openlocfilehash: 50206b77504979c1cf67b4d0daa0b6f6576bde32
+ms.sourcegitcommit: eb935a250f8531b04a42710356072b80d46ee3a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43612348"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "49661052"
 ---
 # <a name="how-to-run-the-completed-project"></a>Exécution du projet terminé
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions requises
 
 Pour exécuter le projet terminé dans ce dossier, vous avez besoin des éléments suivants :
 
-- [Kit de développement Java (JDK)](https://java.com/en/download/faq/develop.xml) et [Gradle](https://gradle.org/) installé sur votre ordinateur de développement. Si vous n’avez pas le JDK ou Gradle, reportez-vous aux liens précédents sur les options de téléchargement. (**Remarque :** ce didacticiel a été écrit avec openjdk version 14.0.0.36 et Gradle 6,3. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.)
+- [Kit de développement Java (JDK)](https://java.com/en/download/faq/develop.xml) et [Gradle](https://gradle.org/) installé sur votre ordinateur de développement. Si vous n’avez pas le JDK ou Gradle, reportez-vous aux liens précédents sur les options de téléchargement. (**Remarque :** ce didacticiel a été écrit avec openjdk version 14.0.0.36 et Gradle 6.7.1. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.)
 - Un compte professionnel ou scolaire Microsoft.
 
 Si vous n’avez pas de compte Microsoft, vous pouvez vous [inscrire au programme pour les développeurs office 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement gratuit à Office 365.
@@ -47,7 +47,7 @@ Si vous n’avez pas de compte Microsoft, vous pouvez vous [inscrire au programm
 
 ## <a name="configure-the-sample"></a>Configurer l’exemple
 
-1. Renommez `oAuth.properties.example` le fichier `oAuth.properties`.
+1. Renommez le `oAuth.properties.example` fichier `oAuth.properties` .
 1. Modifiez le `oAuth.properties` fichier et effectuez les modifications suivantes.
     1. Remplacez `YOUR_APP_ID_HERE` par l' **ID d’application** que vous avez obtenu à partir du portail d’inscription des applications.
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f13ee9baa26bb487d5b50bd966e40cee9ba64378
-ms.sourcegitcommit: 22ec2c0e4803b82c9d360f3609f8b15ba5d017ca
+ms.openlocfilehash: 3b1e366ded1e9d59f048eec8da23a686a121dedf
+ms.sourcegitcommit: eb935a250f8531b04a42710356072b80d46ee3a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "43940475"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "49661073"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
@@ -13,7 +13,7 @@ Ce didacticiel vous apprend à créer une application de console Java qui utilis
 > [!TIP]
 > Si vous préférez télécharger simplement le didacticiel terminé, vous pouvez télécharger ou cloner le [référentiel GitHub](https://github.com/microsoftgraph/msgraph-training-java).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Conditions requises
 
 Avant de commencer ce didacticiel, le [Kit de développement Java (JDK)](https://java.com/en/download/faq/develop.xml) et [Gradle](https://gradle.org/) doit être installé sur votre ordinateur de développement. Si vous n’avez pas le JDK ou Gradle, reportez-vous aux liens précédents sur les options de téléchargement.
 
@@ -23,7 +23,7 @@ Vous devez également disposer d’un compte Microsoft personnel disposant d’u
 - Vous pouvez vous [inscrire au programme pour les développeurs office 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement gratuit à Office 365.
 
 > [!NOTE]
-> Ce didacticiel a été écrit avec OpenJDK version 14.0.0.36 et Gradle 6,3. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.
+> Ce didacticiel a été écrit avec OpenJDK version 14.0.0.36 et Gradle 6.7.1. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.
 
 ## <a name="feedback"></a>Commentaires
 
