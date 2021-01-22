@@ -1,26 +1,26 @@
 ---
-ms.openlocfilehash: c26e5b8ab0b7c5c62b926e3f5416b94e3f10b601
-ms.sourcegitcommit: eb935a250f8531b04a42710356072b80d46ee3a4
+ms.openlocfilehash: 16e96edc78ed2f6955bc14654edba1cb26323648
+ms.sourcegitcommit: 2c0e0d2d6de994022dfa0faa10131582fb10e9b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "49661045"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "49919528"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
-Dans cet exercice, vous allez incorporer Microsoft Graph dans l’application. Pour cette application, vous allez utiliser le [Kit de développement logiciel (SDK) Microsoft Graph pour Java](https://github.com/microsoftgraph/msgraph-sdk-java) pour effectuer des appels à Microsoft Graph.
+Dans cet exercice, vous allez incorporer Microsoft Graph dans l’application. Pour cette application, vous allez utiliser le [SDK Microsoft Graph pour](https://github.com/microsoftgraph/msgraph-sdk-java) Java pour effectuer des appels à Microsoft Graph.
 
 ## <a name="implement-an-authentication-provider"></a>Implémenter un fournisseur d’authentification
 
-Le kit de développement logiciel (SDK) Microsoft Graph pour Java nécessite une implémentation de l' `IAuthenticationProvider` interface pour instancier son `GraphServiceClient` objet.
+Le SDK Microsoft Graph pour Java nécessite une implémentation de `IAuthenticationProvider` l’interface pour insérer son `GraphServiceClient` objet.
 
-1. Créez un fichier dans le répertoire **./graphtutorial/src/main/Java/graphtutorial** nommé **SimpleAuthProvider. Java** et ajoutez le code suivant.
+1. Créez un fichier dans le répertoire **./graphtutorial/src/main/java/graphtutorial** nommé **SimpleAuthProvider.java** et ajoutez le code suivant.
 
     :::code language="java" source="../demo/graphtutorial/src/main/java/graphtutorial/SimpleAuthProvider.java" id="AuthProviderSnippet":::
 
 ## <a name="get-user-details"></a>Obtenir les détails de l’utilisateur
 
-1. Créez un fichier dans le répertoire **./graphtutorial/src/main/Java/graphtutorial** nommé **Graph. Java** et ajoutez le code suivant.
+1. Créez un fichier dans le répertoire **./graphtutorial/src/main/java/graphtutorial** nommé **Graph.java** et ajoutez le code suivant.
 
     ```java
     package graphtutorial;
@@ -90,13 +90,13 @@ Le kit de développement logiciel (SDK) Microsoft Graph pour Java nécessite une
     }
     ```
 
-1. Ajoutez l' `import` instruction suivante en haut de **app. Java**.
+1. Ajoutez `import` l’instruction suivante en haut **de App.java**.
 
     ```java
     import com.microsoft.graph.models.extensions.User;
     ```
 
-1. Ajoutez le code suivant dans **app. Java** juste avant la `Scanner input = new Scanner(System.in);` ligne pour obtenir l’utilisateur et générer le nom complet de l’utilisateur.
+1. Ajoutez le code suivant **dans App.java** juste avant la ligne pour obtenir l’utilisateur et afficher le nom complet `Scanner input = new Scanner(System.in);` de l’utilisateur.
 
     ```java
     // Greet the user
@@ -106,33 +106,33 @@ Le kit de développement logiciel (SDK) Microsoft Graph pour Java nécessite une
     System.out.println();
     ```
 
-1. Exécutez l’application. Une fois que vous êtes connecté à l’application, vous vous félicitez par son nom.
+1. Exécutez l’application. Une fois que vous vous connectez à l’application, vous êtes le bienvenu par son nom.
 
 ## <a name="get-calendar-events-from-outlook"></a>Récupérer les événements de calendrier à partir d’Outlook
 
-1. Ajoutez la fonction suivante à la `Graph` classe dans **Graph. Java** pour obtenir des événements à partir du calendrier de l’utilisateur.
+1. Ajoutez la fonction suivante à `Graph` la classe dans **Graph.java** pour obtenir des événements à partir du calendrier de l’utilisateur.
 
     :::code language="java" source="../demo/graphtutorial/src/main/java/graphtutorial/Graph.java" id="GetEventsSnippet":::
 
 Que fait ce code ?
 
 - L’URL qui sera appelée est `/me/calendarview`.
-  - `QueryOption` les objets sont utilisés pour ajouter `startDateTime` les `endDateTime` paramètres et, définissant le début et la fin de l’affichage Calendrier.
-  - Un `QueryOption` objet est utilisé pour ajouter le `$orderby` paramètre, en triant les résultats par heure de début.
-  - Un `HeaderOption` objet est utilisé pour ajouter l' `Prefer: outlook.timezone` en-tête, ce qui entraîne l’ajustement des heures de début et de fin au fuseau horaire de l’utilisateur.
-  - La `select` fonction limite les champs renvoyés pour chaque événement à ceux que l’application utilisera réellement.
+  - `QueryOption` sont utilisés pour ajouter les paramètres et définir le début et la `startDateTime` `endDateTime` fin de l’affichage Calendrier.
+  - Un `QueryOption` objet est utilisé pour ajouter le `$orderby` paramètre, triant les résultats par heure de début.
+  - Un `HeaderOption` objet est utilisé pour ajouter l’en-tête, ce qui a pour effet d’ajuster les heures de début et de fin au `Prefer: outlook.timezone` fuseau horaire de l’utilisateur.
+  - La fonction limite les champs renvoyés pour chaque événement à ceux que `select` l’application utilisera réellement.
   - La `top` fonction limite le nombre d’événements dans la réponse à un maximum de 25.
-- La `getNextPage` fonction est utilisée pour demander des pages supplémentaires de résultats s’il y a plus de 25 événements dans la semaine en cours.
+- La fonction est utilisée pour demander des pages de résultats supplémentaires s’il y a plus de 25 événements `getNextPage` dans la semaine en cours.
 
-1. Créez un fichier dans le répertoire **./graphtutorial/src/main/Java/graphtutorial** nommé **GraphToIana. Java** et ajoutez le code suivant.
+1. Créez un fichier dans le répertoire **./graphtutorial/src/main/java/graphtutorial** nommé **GraphToIana.java** et ajoutez le code suivant.
 
     :::code language="java" source="../demo/graphtutorial/src/main/java/graphtutorial/GraphToIana.java" id="zoneMappingsSnippet":::
 
-    Cette classe implémente une recherche simple pour convertir les noms des fuseaux horaires Windows en identificateurs IANA et pour générer un **ID** de zone basé sur un nom de fuseau horaire Windows.
+    Cette classe implémente une recherche simple pour convertir des noms de fuseau horaire Windows en identificateurs IANA et pour générer un **ZoneId** basé sur un nom de fuseau horaire Windows.
 
 ## <a name="display-the-results"></a>Afficher les résultats
 
-1. Ajoutez les `import` instructions suivantes dans **app. Java**.
+1. Ajoutez les `import` instructions suivantes **dans App.java**.
 
     ```java
     import java.time.DayOfWeek;
@@ -150,21 +150,21 @@ Que fait ce code ?
     import com.microsoft.graph.models.extensions.Event;
     ```
 
-1. Ajoutez la fonction suivante à la `App` classe pour mettre en forme les propriétés [DateTimeTimeZone](/graph/api/resources/datetimetimezone?view=graph-rest-1.0) de Microsoft Graph dans un format convivial.
+1. Ajoutez la fonction suivante à la classe pour mettre en forme les `App` [propriétés dateTimeTimeZone](/graph/api/resources/datetimetimezone?view=graph-rest-1.0) de Microsoft Graph dans un format convivial.
 
     :::code language="java" source="../demo/graphtutorial/src/main/java/graphtutorial/App.java" id="FormatDateSnippet":::
 
-1. Ajoutez la fonction suivante à la `App` classe pour obtenir les événements de l’utilisateur et les sortir dans la console.
+1. Ajoutez la fonction suivante à la classe pour obtenir les événements `App` de l’utilisateur et les sortir dans la console.
 
     :::code language="java" source="../demo/graphtutorial/src/main/java/graphtutorial/App.java" id="ListEventsSnippet":::
 
-1. Ajoutez les éléments suivants juste après le `// List the calendar` commentaire dans la `main` fonction.
+1. Ajoutez ce qui suit juste après `// List the calendar` le commentaire dans la `main` fonction.
 
     ```java
-    listCalendarEvents(accessToken);
+    listCalendarEvents(accessToken, user.mailboxSettings.timeZone);
     ```
 
-1. Enregistrez toutes vos modifications, générez l’application, puis exécutez-la. Choisissez l’option **liste des événements de calendrier** pour afficher la liste des événements de l’utilisateur.
+1. Enregistrez toutes vos modifications, créez l’application, puis exécutez-la. Choisissez **l’option Lister les** événements de calendrier pour voir la liste des événements de l’utilisateur.
 
     ```Shell
     Welcome Adele Vance
