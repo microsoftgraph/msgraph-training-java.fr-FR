@@ -1,29 +1,29 @@
 ---
-ms.openlocfilehash: c03403209c6985dd3235488891a263e447c72149
-ms.sourcegitcommit: eb935a250f8531b04a42710356072b80d46ee3a4
+ms.openlocfilehash: bbb71d370fea90a3f7d2eae2f27d04f7e19d3d94
+ms.sourcegitcommit: 5c09eff01b265ddfcca9090c14dca80a95320edd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "49661110"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "51695785"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
-Dans cette section, vous allez ajouter la possibilité de créer des événements dans le calendrier de l’utilisateur.
+Dans cette section, vous allez ajouter la possibilité de créer des événements sur le calendrier de l'utilisateur.
 
-1. Ouvrez **./graphtutorial/src/main/Java/graphtutorial/Graph.Java** et ajoutez la fonction suivante à la classe **Graph** .
+1. Ouvrez **./graphtutorial/src/main/java/graphtutorial/Graph.java** et ajoutez la fonction suivante à la **classe Graph.**
 
     :::code language="java" source="../demo/graphtutorial/src/main/java/graphtutorial/Graph.java" id="CreateEventSnippet":::
 
-1. Ouvrez **./graphtutorial/src/main/Java/graphtutorial/App.Java** et ajoutez la fonction suivante à la classe **app** .
+1. Ouvrez **./graphtutorial/src/main/java/graphtutorial/App.java** et ajoutez la fonction suivante à la **classe App.**
 
     :::code language="java" source="../demo/graphtutorial/src/main/java/graphtutorial/App.java" id="CreateEventSnippet":::
 
-    Cette fonction invite l’utilisateur à indiquer l’objet, les participants, le début, la fin et le corps, puis utilise ces valeurs pour appeler `Graph.createEvent` .
+    Cette fonction demande à l'utilisateur l'objet, les participants, le début, la fin et le corps, puis utilise ces valeurs pour appeler `Graph.createEvent` .
 
-1. Ajoutez les éléments suivants juste après le `// Create a new event` commentaire dans la `Main` fonction.
+1. Ajoutez ce qui suit juste après `// Create a new event` le commentaire dans la `Main` fonction.
 
     ```java
-    createEvent(accessToken, user.mailboxSettings.timeZone, input);
+    createEvent(user.mailboxSettings.timeZone, input);
     ```
 
-1. Enregistrez toutes vos modifications et exécutez l’application. Choisissez l’option **Ajouter un événement** . Répondez aux invites pour créer un événement dans le calendrier de l’utilisateur.
+1. Enregistrez toutes vos modifications et exécutez l'application. Choisissez **l'option Ajouter un** événement. Répondez aux invites pour créer un événement sur le calendrier de l'utilisateur.
